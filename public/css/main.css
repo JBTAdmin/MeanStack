@@ -1,0 +1,73 @@
+label {
+  display: inline-block;
+  width: 150px;
+  color: #0275d8;
+}
+select{
+  width: 275px;
+}
+h5,
+h3 {
+  color: #0275d8;
+  text-align: center;
+}
+.search{
+  
+  margin: 0 auto;
+
+}
+body{
+  
+  
+}
+
+.thebody {
+  height: 400px;
+  width: 100%;
+  font-size: 25px;
+  display: inline-block;
+  text-align: center;
+}
+
+
+li {
+  display: inline-block;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+button {
+   color: #0275d8;
+  width: 200px;
+
+}
+
+.buttons tr {
+  display: flex;
+}
+
+.buttons tr td {
+  flex: 1;
+  display: block;
+  flex-direction: column;
+}
+
+button {
+  flex: 1;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.header {
+  text-align: center;
+  background-color: #FFF0F5;
+}
+
+#footer {
+  background-color: #696969;
+  position: fixed;
+  bottom: 0;
+  left: 600px;
+}

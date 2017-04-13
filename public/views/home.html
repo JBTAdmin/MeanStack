@@ -1,0 +1,54 @@
+<div class="downpart" ng-controller="studentController">
+	<br/>
+
+	</br>
+	<h5>REGISTER</h5>
+	</br>
+
+
+	<div class="thebody">
+
+		<form method="POST"  class="theform">
+			<div>
+				<label> First Name</label>
+				<input placeholder="FIRST NAME" name="firstname" type="text" required="true">
+			</div>
+			<div>
+				<label> Last Name</label>
+				<input placeholder="LAST NAME" name="lastname" type="text" required="true">
+			</div>
+			<div>
+				<label>Email</label>
+				<input placeholder="E-MAIL" name="email" type="email">
+			</div>
+			<div>
+				<label>Age </label>
+				<input placeholder="AGE" name="age" type="AGE">
+			</div>
+			<div>
+				<label name="sex">MALE</label>
+				<select>
+					<option>MALE</option>
+					<option>FEMALE</option>
+				</select>
+			</div>
+
+			<div>
+				<label name="Country">Country </label>
+				<input placeholder="COUNTRY" name="country" type="text">
+			</div>
+			<div>
+				<label name="Address">Address </label>
+				<input style="height:70px" name="address" type="text">
+			</div>
+		</form>
+		</br>
+		<div class="wrapper">
+
+			<button type="button" ng-click="createStudent()"> + </button>
+			<button type="button" ng-click="deleteStudent()"> - </button>
+			<button type="button" ng-click="updateStudent()"> Update</button>
+		</div>
+	</div>
+
+</div>
