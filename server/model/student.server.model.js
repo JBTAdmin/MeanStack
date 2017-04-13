@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 schema = mongoose.Schema;
 
-//var StudentSchema = new schema({
-	var StudentSchema = mongoose.Schema({
+var StudentSchema = new schema({
 	firstname: {
 		type: String,
 		required: true
@@ -14,12 +13,9 @@ schema = mongoose.Schema;
 	email: {
 		type: String,
 		required: true,
-		unique: true
-		
-		
 	},
 	age: {
-		type: Number
+		type: String
 	},
 	sex: {
 		type: String,

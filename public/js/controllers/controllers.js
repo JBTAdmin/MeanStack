@@ -1,84 +1,61 @@
-app.controller('studentController', ['$rootScope', '$scope', '$state', '$stateParams', 'toastr', 'studentService',
-	function ($rootScope, $scope, $state, $stateParams, toastr, studentService) {
+app.controller('studentController', ['$rootScope', '$scope', '$state', '$stateParams',  'studentService',
+	function ($rootScope, $scope, $state, $stateParams,  studentService) {
 
 		$scope.createStudent = function () {
-				var details = {
-					firstname: $scope.firstname,
-					lastname: $scope.lastname,
-					email: $scope.email,
-					student: $scope.age,
-					sex: $scope.sex,
-					country: $scope.country,
-					address: $scope.address
-				};
+				
+					var details = {
+						firstname: $scope.student.firstname,
+						lastname: $scope.student.lastname,
+						email: $scope.student.email,
+						age: $scope.student.age,
+						sex: $scope.student.sex,
+						country: $scope.student.country,
+						address: $scope.student.address
+					};
+					console.log('details are ' + JSON.stringify(details));
+					
 
-				studentService.create(details, function (success, data) {
-					if (success) {
-						toastr.success(data.message, {
-							timeOut: 1000
-						});
-
-					} else {
-						toastr.error(data.message, 'Error', {
-							timeOut: 2000
-						});
-					}
-				});
+					studentService.create(details, function (success, data) {
+					window.alert("registration successful");
+					});
+				
 			},
-			$scope.deleteStudent = function () {
-				studentService.search($scope.studentId, function (success, data) {
-					if (success) {
-						toastr.success(data.message, {
-							timeOut: 1000
-						});
-					} else {
-						toastr.error(data.message, 'Error', {
-							timeOut: 2000
-						});
-					}
+			$scope.deleteStudent = function (id) {
+
+
+				studentService.delete(id, function () {
+								
+							
+
+					
 				});
+				window.alert('Student deleted,kindly refresh the page');
 
 			},
 			$scope.updateStudent = function () {
 				var details = {
-					firstName: $scope.firstname,
-					lastName: $scope.lastname,
-
-					student: $scope.age,
-					email: $scope.email,
-					sex: $scope.sex,
-					studentId: $scope.studentId
-				};
-				studentService.update($scope.studentId, details, function (success, data) {
-					if (success) {
-						toastr.success(data.message, {
-							timeOut: 1000
-						});
-					} else {
-						toastr.error(data.message, 'Error', {
-							timeOut: 2000
-						});
-					}
+						id: $scope.student.id,
+						firstname: $scope.student.firstname,
+						lastname: $scope.student.lastname,
+						email: $scope.student.email,
+						age: $scope.student.age,
+						sex: $scope.student.sex,
+						country: $scope.student.country,
+						address: $scope.student.address
+					};
+				studentService.update( details, function () {
+				window.alert('updated successfully');
 				});
 
 			},
-			$scope.searchStudent = function () {
-				studentService.search($scope.studentId, function (success, data) {
-					if (success) {
-						toastr.success(data.message, {
-							timeOut: 1000
-						});
-					} else {
-						toastr.error(data.message, 'Error', {
-							timeOut: 2000
-						});
-					}
+			
+			$scope.listAll = function () {
+				studentService.getAll().then(function (response) {
+					$scope.students = response.data;
 				});
 
-			},
+			}
 
-			onError = function (error) {
-				$scope.error = error.data
-			};
+		$scope.listAll();
 	}
 ]);

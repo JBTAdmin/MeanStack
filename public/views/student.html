@@ -1,0 +1,34 @@
+
+</br>
+<h5> STUDENT INFORMATION </h5>
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr class='danger'>
+            <td>ID </td>
+			<td>firstname</td>
+            <td>lastname</td>
+			<td>Email</td>
+			<td>age</td>
+            <td>sex</td>
+			<td>country</td>
+			
+		</tr>
+	
+	</thead>
+	<tbody>
+		<tr ng-repeat="student in students" class='info'>
+            <td>{{student._id}}</a></td>
+			<td>{{student.firstname}}</a></td>
+            <td>{{student.lastname}}</a></td>
+			<td>{{student.email}}</td>
+			<td>{{student.age}}</td>
+            <td>{{student.sex}}</td>
+            <td>{{student.country}}</td>
+			
+
+           
+			<td><button ng-click="deleteStudent(student._id);" class="btn btn-info btn-sm">Delete</button></td>
+		</tr>
+			
+	</tbody>
+</table>

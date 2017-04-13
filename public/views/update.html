@@ -2,13 +2,18 @@
 	<br/>
 
 	</br>
-	<h5>REGISTER</h5>
+	<h5>UPDATE DETAILS</h5>
 	</br>
 
 
 	<div class="thebody">
 
-		<form name="studentForm"  >
+		<form name="studentForm" ng-submit="createStudent(studentForm.$valid)" novalidate >
+            <div>
+				<label> ID</label>
+				<input  type="text" name="id" placeholder="id"  data-ng-model="student.id"   required>
+				
+			</div>
 			<div>
 				<label> First Name</label>
 				<input  type="text" name="firstname" placeholder="FIRST NAME"  data-ng-model="student.firstname"   required>
@@ -46,9 +51,9 @@
 		</br>
 		<div class="wrapper">
 
-			<button type="button" ng-click="createStudent()" > + </button>
+		
 			
-			
+			<button type="button" ng-click="updateStudent()"> Update</button>
 		</div>
 	</div>
 
