@@ -1,4 +1,5 @@
 # meanstack
+Run mongod.exe
 #Run below Command to install npm
 npm install body-parser
 npm install mongoose
