@@ -8,47 +8,56 @@
 
 	<div class="thebody">
 
-		<form name="studentForm"  >
+		<form name="studentForm" ng-submit="createStudent()" novalidate>
 			<div>
 				<label> First Name</label>
-				<input  type="text" name="firstname" placeholder="FIRST NAME"  data-ng-model="student.firstname"   required>
-				
+				<input type="text" name="firstname" placeholder="FIRST NAME" data-ng-model="student.firstname" required>
+				<p ng-show=" studentForm.firstname.$invalid && !studentForm.firstname.$pristine">Firstname is required.</p>
+
+
 			</div>
 			<div>
 				<label> Last Name</label>
-				<input placeholder="LAST NAME" data-ng-model="student.lastname"  name="lastname" type="text" required="true">
+				<input placeholder="LAST NAME" data-ng-model="student.lastname" id="lastname" name="lastname" type="text" required>
+				<p ng-show="studentForm.lastname.$invalid && !studentForm.lastname.$pristine">Lastname is required.</p>
 			</div>
 			<div>
 				<label>Email</label>
-				<input placeholder="E-MAIL" data-ng-model="student.email"  name="email" type="email">
+				<input placeholder="E-MAIL" data-ng-model="student.email" id="email" name="email" type="email" required>
+				<p ng-show="studentForm.email.$invalid && !studentForm.email.$pristine">Invalid Email-address .</p>
 			</div>
 			<div>
 				<label>Age </label>
-				<input placeholder="AGE"  data-ng-model="student.age" name="age" type="AGE">
+				<input placeholder="AGE" data-ng-model="student.age" id="age" name="age" type="AGE" required>
+				<p ng-show="studentForm.age.$invalid && !studentForm.age.$pristine">Email address required.</p>
 			</div>
 			<div>
-				<label name="sex" data-ng-model="student.sex" >MALE</label>
-				<select data-ng-model="student.sex">
+				<label name="sex" data-ng-model="student.sex">MALE</label>
+				<select data-ng-model="student.sex" id="sex" required>
+					<p ng-show="studentForm.sex.$invalid && !studentForm.sex.$pristine"  Please select an option.</p>
 					<option>MALE</option>
 					<option>FEMALE</option>
 				</select>
 			</div>
 
 			<div>
-				<label name="Country"  >Country </label>
-				<input placeholder="COUNTRY"  data-ng-model="student.country" name="country" type="text">
+				<label name="Country">Country </label>
+				<input placeholder="COUNTRY" data-ng-model="student.country" name="country" id="country" type="text" required>
+				<p ng-show="studentForm.country.$invalid && !studentForm.country.$pristine">Country required.</p>
 			</div>
 			<div>
-				<label name="Address" >Address </label>
-				<input style="height:70px" name="address"   data-ng-model="student.address" type="text">
+				<label name="Address">Address </label>
+				<input style="height:70px" name="address" data-ng-model="student.address" type="text" id="country" required>
+				<p ng-show="studentForm.address.$invalid && !studentForm.address.$pristine">Address required.</p>
 			</div>
 		</form>
+
 		</br>
 		<div class="wrapper">
 
-			<button type="button" ng-click="createStudent()" > + </button>
-			
-			
+			<button type="button" ng-click=" createStudent()"> + </button>
+
+
 		</div>
 	</div>
 

@@ -15,7 +15,7 @@ var StudentSchema = new schema({
 		required: true,
 	},
 	age: {
-		type: String
+		type: Number
 	},
 	sex: {
 		type: String,

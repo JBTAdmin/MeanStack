@@ -12,28 +12,35 @@
             <div>
 				<label> ID</label>
 				<input  type="text" name="id" placeholder="id"  data-ng-model="student.id"   required>
+				<p ng-show=" studentForm.id.$invalid && !studentForm.id.$pristine">Studentid  is required.</p>
+				
 				
 			</div>
 			<div>
 				<label> First Name</label>
 				<input  type="text" name="firstname" placeholder="FIRST NAME"  data-ng-model="student.firstname"   required>
+				<p ng-show=" studentForm.firstname.$invalid && !studentForm.firstname.$pristine">Firstname is required.</p>
 				
 			</div>
 			<div>
 				<label> Last Name</label>
 				<input placeholder="LAST NAME" data-ng-model="student.lastname"  name="lastname" type="text" required="true">
+				<p ng-show=" studentForm.lastname.$invalid && !studentForm.lastname.$pristine">Lastname is required.</p>
 			</div>
 			<div>
 				<label>Email</label>
 				<input placeholder="E-MAIL" data-ng-model="student.email"  name="email" type="email">
+				<p ng-show=" studentForm.email.$invalid && !studentForm.email.$pristine">invalid Email-address .</p>
 			</div>
 			<div>
 				<label>Age </label>
 				<input placeholder="AGE"  data-ng-model="student.age" name="age" type="AGE">
+				<p ng-show=" studentForm.age.$invalid && !studentForm.age.$pristine">Age is required.</p>
 			</div>
 			<div>
 				<label name="sex" data-ng-model="student.sex" >MALE</label>
 				<select data-ng-model="student.sex">
+					<p ng-show=" studentForm.sex.$invalid && !studentForm.sex.$pristine"> Please select an option.</p>
 					<option>MALE</option>
 					<option>FEMALE</option>
 				</select>
@@ -42,10 +49,12 @@
 			<div>
 				<label name="Country"  >Country </label>
 				<input placeholder="COUNTRY"  data-ng-model="student.country" name="country" type="text">
+				<p ng-show=" studentForm.country.$invalid && !studentForm.country.$pristine"> Country.</p>
 			</div>
 			<div>
 				<label name="Address" >Address </label>
 				<input style="height:70px" name="address"   data-ng-model="student.address" type="text">
+				<p ng-show=" studentForm.address.$invalid && !studentForm.address.$pristine">Address required.</p>
 			</div>
 		</form>
 		</br>
